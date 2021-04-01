@@ -1,6 +1,7 @@
 from selenium import webdriver
 from abc import ABC, abstractmethod
 import pandas as pd
+from utils import get_filename
 import json
 import ast
 import urllib
@@ -44,7 +45,7 @@ class Scraper(ABC):
         return df
 
     def download_images(self, keyword):
-        filename = keyword.lower().replace(" ","_")
+        filename = get_filename(keyword)
         data_csv = "{}/data/{}.csv".format(self._name, filename) 
         img_dir= "{}/img".format(self._name)
 
@@ -58,7 +59,7 @@ class Scraper(ABC):
                 
 
     def pipeline(self, keyword, download_links = True):
-        filename = "{}.csv".format(keyword.lower().replace(" ","_"))
+        filename = "{}.csv".format(get_filename(keyword))
         links_filename = "{}/links/{}".format(self._name, filename) 
         data_filename = "{}/data/{}".format(self._name, filename) 
 

@@ -14,3 +14,9 @@
     cd /usr/local/Caskroom/chromedriver/<version-of-chromedriver>/
     xattr -d com.apple.quarantine chromedriver
     ```
+
+# Run
+
+```sh
+python3 main.py
+```
