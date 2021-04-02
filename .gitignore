@@ -1,5 +1,8 @@
 coin-wear-env/
 .vscode
+.idea
+.history
 **/.DS_Store
 **/__pycache__
 dataset/*/img/
+**/*.code-workspace
