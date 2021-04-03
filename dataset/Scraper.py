@@ -23,7 +23,7 @@ class Scraper(ABC):
         pass
 
     @abstractmethod
-    def scrap_coin_data_from_page(self, link, csv_path):
+    def scrap_coin_data_from_page(self, link):
         pass
 
     def link_of_coins_to_csv(self, keyword, csv_path):
@@ -47,14 +47,14 @@ class Scraper(ABC):
     def download_images(self, keyword):
         filename = get_filename(keyword)
         data_csv = "{}/data/{}.csv".format(self._name, filename) 
-        img_dir= "{}/img".format(self._name)
+        img_dir= "{}/img/{}".format(self._name, get_filename(keyword))
 
         df = pd.read_csv(data_csv, sep='|')
         for i, image_array in df['images'].iteritems():
             image_array = ast.literal_eval(image_array)
             for j, image in enumerate(image_array):
                 response = requests.get(image, stream=True)
-                with open('{}/{}_{}.png'.format(img_dir, i+1, j+1), 'wb') as out_file:
+                with open('{}/{}_{}.jpg'.format(img_dir, i+1, j+1), 'wb') as out_file:
                     shutil.copyfileobj(response.raw, out_file)
                 
 
