@@ -19,21 +19,26 @@ def create_circular_mask(h, w, center=None, radius=None):
     mask = dist_from_center <= radius
     return mask
 
-def crop_coin(img_orig, height_img_ds=500, gb_size=(3,3), canny_th1=50, canny_th2=100, hough_param2=0.9, mc_size=(11, 11), method = 1 ):
+def crop_coin(img_orig, height_img_ds=800, gb_size=(3,3), canny_th1=40, canny_th2=100, hough_param2=1, mc_size=(11, 11), method = 1 ):
     
-    ds_ratio = 1
-    if height_img_ds < img_orig.shape[0]:
-        ds_ratio = height_img_ds/img_orig.shape[0]
-        img_ds = cv2.resize(img_orig, None, fx=ds_ratio, fy=ds_ratio, interpolation=cv2.INTER_AREA) # downsampling
-    else:
-        img_ds = img_orig.copy()
+    # ds_ratio = 1
+    # if height_img_ds < img_orig.shape[0]:
+    #     ds_ratio = height_img_ds/img_orig.shape[0]
+    #     img_ds = cv2.resize(img_orig, None, fx=ds_ratio, fy=ds_ratio, interpolation=cv2.INTER_AREA) # downsampling
+    # else:
+    #     img_ds = img_orig.copy()
+
+    ds_ratio = height_img_ds/img_orig.shape[0]
+    img_ds = cv2.resize(img_orig, None, fx=ds_ratio, fy=ds_ratio, interpolation=cv2.INTER_AREA)
 
     gray = cv2.cvtColor(img_ds, cv2.COLOR_BGR2GRAY)
     gray = cv2.GaussianBlur(gray, gb_size, 0)
 
     thresh = cv2.Canny(gray, canny_th1, canny_th2)
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, mc_size)
+    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, mc_size)
     closed = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel)
+    # closed = cv2.GaussianBlur(closed, gb_size, 0)
+
 
     if method == 2:
         _, th = cv2.threshold(closed, 1, 1, cv2.THRESH_BINARY)
@@ -43,17 +48,20 @@ def crop_coin(img_orig, height_img_ds=500, gb_size=(3,3), canny_th1=50, canny_th
 
         closed = np.uint8(img_max_contour)
 
-    for param2 in np.linspace(1, hough_param2, 10)[::-1]:
-        print(param2)
-        circles = cv2.HoughCircles(closed, cv2.HOUGH_GRADIENT, 1, minDist=img_ds.shape[0], param1=canny_th2, param2=param2, minRadius=int(0.35 * img_ds.shape[0]), maxRadius=int(0.5 * img_ds.shape[0]))
-        if circles is not None:
-            break
+    # for param2 in np.linspace(1, hough_param2, 10)[::-1]:
+    #     circles = cv2.HoughCircles(closed, cv2.HOUGH_GRADIENT, 1, minDist=img_ds.shape[0], param1=canny_th2, param2=param2, minRadius=int(0.35 * img_ds.shape[0]), maxRadius=int(0.5 * img_ds.shape[0]))
+    #     if circles is not None:
+    #         break
+    
+    circles = cv2.HoughCircles(closed, cv2.HOUGH_GRADIENT, 1, minDist=img_ds.shape[0], param1=canny_th2, param2=hough_param2, minRadius=int(0.35 * img_ds.shape[0]), maxRadius=int(0.5 * img_ds.shape[0]))
 
     circles = circles[0,:]
     (x, y, r) = max(circles, key=lambda c: c[2])
     x, y, r = x/ds_ratio, y/ds_ratio, r/ds_ratio
 
-    masked_img = cv2.circle(closed, (int(x), int(y)), int(r), (0, 0, 255), 1)
+    # masked_img = cv2.circle(np.repeat(closed[:, :, np.newaxis], 3, axis=2) , (int(x), int(y)), int(r), (0, 0, 255), 1)
+    # masked_img = img_ds *  np.repeat(closed[:, :, np.newaxis], 3, axis=2)  
+
 
     mask = create_circular_mask(img_orig.shape[0], img_orig.shape[1], center=(x,y), radius=r)
     masked_img = img_orig.copy()
