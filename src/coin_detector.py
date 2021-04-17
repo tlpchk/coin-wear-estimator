@@ -67,12 +67,14 @@ def crop_coin(img_orig, height_img_ds=800, gb_size=(3,3), canny_th1=40, canny_th
     masked_img = img_orig.copy()
     masked_img[~mask] = 0
 
-    startY, endY = round(y-r), round(y+r)
-    startX, endX = round(x-r), round(x-r) + (endY - startY)
-    startY = max(startY, 0)
-    startX = max(startX, 0)
-    endY = min(masked_img.shape[0]-1, endY)
-    endX = min(masked_img.shape[1]-1, endX)
+    startY = max(round(y-r), 0)
+    startX = max(round(x-r), 0)
+    endY = min(masked_img.shape[0]-1, round(y+r))
+    endX = min(masked_img.shape[1]-1, round(x+r))
+    size = min(endY - startY, endX - startX)
+    endY = startY + size
+    endX = startX + size
+    
     masked_img = masked_img[startY:endY, startX:endX]
 
     return masked_img

@@ -4,5 +4,5 @@ coin-wear-env/
 .history
 **/.DS_Store
 **/__pycache__
-dataset/*/img/
+data/*/*/img/
 **/*.code-workspace

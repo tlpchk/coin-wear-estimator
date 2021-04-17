@@ -1,7 +1,8 @@
-ipykernel==5.5.0
-selenium==3.141.0
-opencv-python
-matplotlib==3.4.0
-pandas==1.2.3
-requests==2.25.1
+ipykernel
+selenium
+opencv-python==4.5.1.48
+matplotlib
+pandas
+requests
 scikit-image
+opencv-contrib-python==4.5.1.48
