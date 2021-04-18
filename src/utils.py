@@ -1,3 +1,5 @@
+import sys
+
 def get_filename(keyword):
     return keyword.lower().replace(" ","_")
 
@@ -46,3 +48,25 @@ adj_grade_pattern = "[12345L][+-]?(/[12345L][+-]?)?"
 companies = ["GCN", "NGC", "PCGS"]
 grade_prefixes = ["UNC", "PF", "MS", "AU", "XF", "VF"]
 company_grade_pattern = "(%s) (%s)\s?(\d{2})?" % ("|".join(companies), "|".join(grade_prefixes))
+
+NIEMCZYK = "niemczyk"
+MARCINIAK = "marciniak"
+
+if 'google.colab' in sys.modules:
+    ROOT_PATH = "/content/drive/MyDrive/coin-wear-estimator"
+else:
+    ROOT_PATH = ".."
+
+KEYWORD = "Sztandar 1930"
+MARCINIAK_DATASET_PATH = "{}/data/marciniak/{}".format(ROOT_PATH, get_filename(KEYWORD))
+NIEMCZYK_DATASET_PATH = "{}/data/niemczyk/{}".format(ROOT_PATH, get_filename(KEYWORD))
+
+metadata_path = lambda ds_path: ds_path + "/csv/metadata.csv"
+page_link_path = lambda ds_path: ds_path + "/csv/page_link.csv"
+side_path = lambda ds_path: ds_path + "/csv/side.csv"
+size_aligned_path = lambda ds_path: ds_path + "/csv/size_aligned.csv"
+
+aligned_coins_path = lambda ds_path, : ds_path + "/img/aligned"
+cropped_coins_path = lambda ds_path: ds_path + "/img/cropped"
+master_coins_path = lambda ds_path: ds_path + "/img/master"
+raw_coins_path = lambda ds_path: ds_path + "/img/raw"

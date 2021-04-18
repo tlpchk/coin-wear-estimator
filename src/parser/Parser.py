@@ -3,7 +3,7 @@ from utils import get_filename
 from abc import ABC, abstractmethod
 import re
 import numpy as np
-from utils import adj_grade_pattern, company_grade_pattern
+from utils import adj_grade_pattern, company_grade_pattern, ROOT_PATH
 
 class Parser(ABC):
     def __init__(self, name):
@@ -18,7 +18,7 @@ class Parser(ABC):
         pass
 
     def get_df(self, keyword, images_only=True):
-        df = pd.read_csv("{}/data/{}.csv".format(self._name, get_filename(keyword)), sep="|")
+        df = pd.read_csv("{}/data/{}/{}/csv/metadata.csv".format(ROOT_PATH, self._name, get_filename(keyword)), sep="|")
         if images_only:
             df = df[df['images'] != '[]']
         return df
@@ -76,8 +76,6 @@ class Parser(ABC):
 
         df["title_state"] = t_states
         df["description_state"] = d_states
-
-        df.to_csv()
 
         return df[["link", "title_state", "description_state"]]
 

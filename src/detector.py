@@ -5,6 +5,8 @@ import itertools
 from skimage.transform import hough_ellipse
 from skimage.draw import ellipse_perimeter
 import numpy as np
+import pandas as pd
+from tqdm import tqdm
 
 def create_circular_mask(h, w, center=None, radius=None):
 
@@ -78,3 +80,19 @@ def crop_coin(img_orig, height_img_ds=800, gb_size=(3,3), canny_th1=40, canny_th
     masked_img = masked_img[startY:endY, startX:endX]
 
     return masked_img
+
+def crop_all_coins(csv_path, image_in_path, image_out_path):
+    df = pd.read_csv(csv_path)
+    names = df[df["label"] > 0]["name"]
+    pbar = tqdm(total=len(names))
+
+    for name in names:
+        try:
+            img = cv2.imread(image_in_path + "/" + name)
+            crop = crop_coin(img)
+            cv2.imwrite(image_out_path +"/" + name, crop)
+        except:
+            print('error')
+            pass
+        pbar.update(1)
+    pbar.close()

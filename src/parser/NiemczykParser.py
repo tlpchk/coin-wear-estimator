@@ -1,4 +1,4 @@
-from Parser import Parser
+from .Parser import Parser
 import re
 import numpy as np
 import pandas as pd
