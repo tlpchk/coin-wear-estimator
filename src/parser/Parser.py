@@ -1,9 +1,8 @@
 import pandas as pd
-from utils import get_filename 
 from abc import ABC, abstractmethod
 import re
 import numpy as np
-from utils import adj_grade_pattern, company_grade_pattern, ROOT_PATH
+from ..utils import adj_grade_pattern, company_grade_pattern, ROOT_PATH, get_filename
 
 class Parser(ABC):
     def __init__(self, name):
@@ -15,6 +14,10 @@ class Parser(ABC):
 
     @abstractmethod
     def extract_from_description(self, d):
+        pass
+
+    @abstractmethod
+    def add_missing_states(self, df):
         pass
 
     def get_df(self, keyword, images_only=True):
@@ -77,5 +80,13 @@ class Parser(ABC):
         df["title_state"] = t_states
         df["description_state"] = d_states
 
+        df = self.add_missing_states(df)
+
         return df[["link", "title_state", "description_state"]]
 
+    def add_missing_states_from_dict(self, df, link_to_state, attr):
+        df_copy = df.copy()
+        for link, state in link_to_state.items():
+            rows_match_link = df["link"] == link
+            df_copy.loc[rows_match_link, attr] = state
+        return df_copy

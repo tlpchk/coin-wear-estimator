@@ -1,8 +1,11 @@
 ipykernel
 selenium
-opencv-python==4.5.1.48
 matplotlib
 pandas
 requests
 scikit-image
+tqdm
+seaborn
+ipywidgets
+opencv-python==4.5.1.48
 opencv-contrib-python==4.5.1.48

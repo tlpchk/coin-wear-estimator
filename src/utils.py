@@ -55,7 +55,7 @@ MARCINIAK = "marciniak"
 if 'google.colab' in sys.modules:
     ROOT_PATH = "/content/drive/MyDrive/coin-wear-estimator"
 else:
-    ROOT_PATH = ".."
+    ROOT_PATH = "/Users/telepchuk/PWr/Dan III/Magister/coin-wear-estimator"
 
 KEYWORD = "Sztandar 1930"
 MARCINIAK_DATASET_PATH = "{}/data/marciniak/{}".format(ROOT_PATH, get_filename(KEYWORD))

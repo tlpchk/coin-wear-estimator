@@ -18,5 +18,5 @@
 # Run
 
 ```sh
-python3 main.py
+python3 -m src.2_parser_pipeline
 ```
