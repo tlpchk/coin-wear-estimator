@@ -6,3 +6,4 @@ coin-wear-env/
 **/__pycache__
 data/*/*/img/
 **/*.code-workspace
+**/.ipynb_checkpoints
