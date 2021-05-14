@@ -118,6 +118,7 @@ metadata_path = lambda ds_path: ds_path + "/csv/metadata.csv"
 page_link_path = lambda ds_path: ds_path + "/csv/page_link.csv"
 side_path = lambda ds_path: ds_path + "/csv/side.csv"
 size_aligned_path = lambda ds_path: ds_path + "/csv/size_aligned.csv"
+inliers_path = lambda ds_path: ds_path + "/csv/inliers.csv"
 
 aligned_coins_path = lambda ds_path, : ds_path + "/img/aligned"
 cropped_coins_path = lambda ds_path: ds_path + "/img/cropped"

@@ -9,5 +9,8 @@ seaborn
 ipywidgets
 scikit-learn
 bunch
+pyopencl
+silx[full]
+ocl
 opencv-python==4.5.1.48
 opencv-contrib-python==4.5.1.48
