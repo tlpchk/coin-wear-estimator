@@ -34,7 +34,6 @@ class Parser(ABC):
         condition = search.group(0)[3:].lstrip()
         return condition
 
-    
     def state_of_wear_method(self, d):
         pattern = "\\\\Stan zachowania:? ((~?{})|{})".format(adj_grade_pattern, company_grade_pattern)
         compile = re.compile(pattern)
@@ -43,8 +42,7 @@ class Parser(ABC):
             return
         condition = search.group(0)[17:].lstrip().rstrip("\\")
         return condition
-
-    
+  
     def grade_company_method(self, d):
         compile = re.compile(company_grade_pattern)
         search = compile.search(d)
@@ -53,7 +51,6 @@ class Parser(ABC):
         condition = search.group(0)
         return condition
 
-    
     def get_df_with_states(self, keyword):
         df = self.get_df(keyword) 
 

@@ -43,7 +43,7 @@ class MarciniakScraper(Scraper):
         print("Fetched {} links".format(len(all_links)))
         return all_links
 
-    def scrap_coin_data_from_page(self, link):
+    def scrap_coin_data_from_page(self, link, id):
         driver = self._driver
         driver.get(link)
         date = driver.find_element_by_xpath("//div[contains(@class, 'auctioninfo')]//div[text()='Data']/../strong").text
@@ -61,5 +61,5 @@ class MarciniakScraper(Scraper):
             desctiption = ""
         
         desctiption = desctiption.replace("\n","\\")
-        return { "title": title, "date": date, "description": desctiption, "images": images, "link": link }
+        return {"title": title, "date": date, "description": desctiption, "images": images, "link": link }
 

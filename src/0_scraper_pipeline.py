@@ -1,5 +1,5 @@
-from scraper.MarciniakScraper import MarciniakScraper 
-from scraper.NiemczykScraper import NiemczykScraper 
+from .scraper.MarciniakScraper import MarciniakScraper 
+from .scraper.NiemczykScraper import NiemczykScraper 
 
 keyword = "Sztandar 1930"
 download_links = True 

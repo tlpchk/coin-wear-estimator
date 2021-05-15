@@ -52,4 +52,4 @@ class NiemczykScraper(Scraper):
             desctiption = ""
         
         desctiption = desctiption.replace("\n","\\")
-        return { "title": title, "date": date, "description": desctiption, "images": images, "link": link }
+        return {"title": title, "date": date, "description": desctiption, "images": images, "link": link }

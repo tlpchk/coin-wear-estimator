@@ -1,7 +1,7 @@
 from selenium import webdriver
 from abc import ABC, abstractmethod
 import pandas as pd
-from utils import get_filename
+from ..utils import get_filename
 import json
 import ast
 import urllib
@@ -38,8 +38,9 @@ class Scraper(ABC):
         except:
             df = pd.DataFrame()
         first_unscraped_link = len(df)
-        for link in links[first_unscraped_link:]:
+        for i, link in enumerate(links[first_unscraped_link:]):
             data = self.scrap_coin_data_from_page(link)
+            data["id"] = i+1
             df = df.append(data, ignore_index=True)
             df.to_csv(csv_path, index=None, sep='|')
         return df

@@ -8,6 +8,8 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 
+BACKGROUND_VALUE = 255
+
 def create_circular_mask(h, w, center=None, radius=None):
 
     if center is None: # use the middle of the image
@@ -21,7 +23,7 @@ def create_circular_mask(h, w, center=None, radius=None):
     mask = dist_from_center <= radius
     return mask
 
-def crop_coin(img_orig, height_img_ds=800, gb_size=(3,3), canny_th1=40, canny_th2=100, hough_param2=1, mc_size=(11, 11), method = 1 ):
+def crop_coin(img_orig, height_img_ds=800, gb_size=(3,3), canny_th1=40, canny_th2=100, hough_param2=1, mc_size=(11, 11), method = 1):
     
     # ds_ratio = 1
     # if height_img_ds < img_orig.shape[0]:
@@ -67,7 +69,7 @@ def crop_coin(img_orig, height_img_ds=800, gb_size=(3,3), canny_th1=40, canny_th
 
     mask = create_circular_mask(img_orig.shape[0], img_orig.shape[1], center=(x,y), radius=r)
     masked_img = img_orig.copy()
-    masked_img[~mask] = 0
+    masked_img[~mask] = BACKGROUND_VALUE
 
     startY = max(round(y-r), 0)
     startX = max(round(x-r), 0)

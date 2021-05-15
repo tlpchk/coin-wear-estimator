@@ -3,13 +3,14 @@ selenium
 matplotlib
 pandas
 requests
+torch
 scikit-image
 tqdm
 seaborn
 ipywidgets
 scikit-learn
 bunch
-pyopencl
+h2o4gpu
 silx[full]
 ocl
 opencv-python==4.5.1.48
