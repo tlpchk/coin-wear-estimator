@@ -72,6 +72,6 @@ def plotConfusionMatrix(y_true, y_pred,
 
 def plotConfusions(true, predictions):
     np.set_printoptions(precision=2)
-    plotConfusionMatrix(true, predictions, title='Confusion matrix, without normalization')
+    # plotConfusionMatrix(true, predictions, title='Confusion matrix, without normalization')
     plotConfusionMatrix(true, predictions, normalize=True, title='Normalized confusion matrix')
     plt.show()

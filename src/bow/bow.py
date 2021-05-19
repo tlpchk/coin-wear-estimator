@@ -1,5 +1,6 @@
 from src.utils import *
 import numpy as np
+import cv2
 from matplotlib import pyplot as plt
 from tqdm.notebook import tqdm
 import torch
@@ -18,7 +19,7 @@ if torch.cuda.is_available():
     from h2o4gpu.solvers import KMeans
 else :
     from sklearn.cluster import KMeans
-
+    
 def getDescriptors(sift, img, sift_gpu):
     if sift_gpu:
       des = [kp.desc for kp in sift.keypoints(img, None)]

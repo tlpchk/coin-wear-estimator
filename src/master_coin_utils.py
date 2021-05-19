@@ -66,10 +66,12 @@ def get_wear_marks(coin, design_mask, ds_shape=None, canny_l=None, canny_u=None)
         coin = np.multiply(~design_mask.astype(bool), coin)
     else:
         design_mask = np.repeat(design_mask[:, :, np.newaxis], 3, axis=2)
+        coin = coin.copy()
         coin[design_mask.astype(bool)] = BACKGROUND_VALUE
     return coin
 
 def convert_to_wear_marks_dataset(dataset, separate_sides, ds_shape=None, canny_l=150, canny_u=200):
+    dataset = Bunch(dataset.copy())
     master_coin_dict = { \
         1: cv2.imread(master_coins_path(MARCINIAK_DATASET_PATH) + "/1_general.jpg"), \
         2: cv2.imread(master_coins_path(MARCINIAK_DATASET_PATH) + "/2_general.jpg"), \
@@ -92,6 +94,12 @@ def convert_to_wear_marks_dataset(dataset, separate_sides, ds_shape=None, canny_
             wear_marks_2 = get_wear_marks(dataset.X[i][1], design_mask_dict[2], ds_shape=ds_shape, canny_l=canny_l, canny_u=canny_u)
             X.append((wear_marks_1, wear_marks_2))
         pbar.update(1)
+    
+    # wear_marks_dataset = Bunch()
+    # for k in dataset.keys():
+    #     wear_marks_dataset[k] = dataset.k
+    # wear_marks_dataset.X = X
+
     dataset.X = X
     pbar.close()  
 
