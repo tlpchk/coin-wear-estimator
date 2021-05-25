@@ -1,0 +1,292 @@
+>>>>>>>2.1
+100%
+1175/1175 [00:14<00:00, 80.46it/s]
+
+====SVM
+100%
+822/822 [04:16<00:00, 3.21it/s]
+
+{'C': 0.8, 'class_weight': 'balanced', 'gamma': 0.125, 'kernel': 'poly'}
+100%
+353/353 [01:30<00:00, 3.90it/s]
+
+n=8 --> 0.600 / 0.520
+{'C': 0.8, 'class_weight': 'balanced', 'gamma': 0.03125, 'kernel': 'rbf'}
+n=16 --> 0.577 / 0.499
+{'C': 0.8, 'class_weight': 'balanced', 'gamma': 0.20833333333333334, 'kernel': 'rbf'}
+n=24 --> 0.937 / 0.520
+{'C': 0.2, 'class_weight': 'balanced', 'gamma': 0.0625, 'kernel': 'poly'}
+n=32 --> 0.792 / 0.498
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.03125, 'kernel': 'poly'}
+n=64 --> 0.987 / 0.497
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.010416666666666666, 'kernel': 'poly'}
+n=96 --> 0.887 / 0.492
+{'C': 0.5, 'class_weight': 'balanced', 'gamma': 0.015625, 'kernel': 'poly'}
+n=128 --> 0.989 / 0.535
+====KNN
+{'metric': 'euclidean', 'n_neighbors': 5, 'weights': 'distance'}
+n=8 --> 1.000 / 0.495
+{'metric': 'manhattan', 'n_neighbors': 4, 'weights': 'distance'}
+n=16 --> 1.000 / 0.489
+{'metric': 'euclidean', 'n_neighbors': 4, 'weights': 'distance'}
+n=24 --> 1.000 / 0.500
+{'metric': 'manhattan', 'n_neighbors': 5, 'weights': 'uniform'}
+n=32 --> 0.678 / 0.534
+{'metric': 'euclidean', 'n_neighbors': 5, 'weights': 'uniform'}
+n=64 --> 0.678 / 0.497
+{'metric': 'euclidean', 'n_neighbors': 5, 'weights': 'distance'}
+n=96 --> 1.000 / 0.538
+{'metric': 'euclidean', 'n_neighbors': 5, 'weights': 'uniform'}
+n=128 --> 0.694 / 0.531
+====RF
+{'ccp_alpha': 0.02, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 15}
+n=8 --> 0.590 / 0.488
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 15}
+n=16 --> 0.597 / 0.541
+{'ccp_alpha': 0.02, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 30}
+n=24 --> 0.700 / 0.522
+{'ccp_alpha': 0.02, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 30}
+n=32 --> 0.713 / 0.500
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 20}
+n=64 --> 0.718 / 0.482
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 30}
+n=96 --> 0.757 / 0.500
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 30}
+n=128 --> 0.792 / 0.509
+====LR
+{'C': 0.02, 'class_weight': 'balanced'}
+n=8 --> 0.499 / 0.484
+{'C': 0.05, 'class_weight': 'balanced'}
+n=16 --> 0.514 / 0.504
+{'C': 0.01, 'class_weight': 'balanced'}
+n=24 --> 0.528 / 0.520
+{'C': 0.01, 'class_weight': 'balanced'}
+n=32 --> 0.564 / 0.490
+{'C': 0.01, 'class_weight': 'balanced'}
+n=64 --> 0.606 / 0.519
+{'C': 0.01, 'class_weight': 'balanced'}
+n=96 --> 0.619 / 0.458
+{'C': 0.01, 'class_weight': 'balanced'}
+n=128 --> 0.645 / 0.492
+>>>>>>>2.2
+100%
+1175/1175 [00:37<00:00, 31.69it/s]
+
+====SVM
+100%
+822/822 [00:22<00:00, 35.81it/s]
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.625, 'kernel': 'linear'}
+100%
+353/353 [00:14<00:00, 23.55it/s]
+
+n=8 --> 0.508 / 0.444
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.125, 'kernel': 'rbf'}
+n=16 --> 0.632 / 0.446
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.08333333333333333, 'kernel': 'rbf'}
+n=24 --> 0.712 / 0.507
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.15625, 'kernel': 'rbf'}
+n=32 --> 0.903 / 0.501
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.078125, 'kernel': 'poly'}
+n=64 --> 1.000 / 0.512
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.020833333333333332, 'kernel': 'rbf'}
+n=96 --> 0.881 / 0.532
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.015625, 'kernel': 'rbf'}
+n=128 --> 0.921 / 0.532
+====KNN
+{'metric': 'manhattan', 'n_neighbors': 3, 'weights': 'distance'}
+n=8 --> 1.000 / 0.439
+{'metric': 'euclidean', 'n_neighbors': 4, 'weights': 'distance'}
+n=16 --> 1.000 / 0.464
+{'metric': 'manhattan', 'n_neighbors': 5, 'weights': 'uniform'}
+n=24 --> 0.644 / 0.464
+{'metric': 'manhattan', 'n_neighbors': 5, 'weights': 'distance'}
+n=32 --> 1.000 / 0.556
+{'metric': 'euclidean', 'n_neighbors': 4, 'weights': 'distance'}
+n=64 --> 1.000 / 0.523
+{'metric': 'euclidean', 'n_neighbors': 5, 'weights': 'distance'}
+n=96 --> 1.000 / 0.496
+{'metric': 'manhattan', 'n_neighbors': 5, 'weights': 'distance'}
+n=128 --> 1.000 / 0.538
+====RF
+{'ccp_alpha': 0.02, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 30}
+n=8 --> 0.571 / 0.400
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 20}
+n=16 --> 0.570 / 0.376
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 30}
+n=24 --> 0.614 / 0.427
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 20}
+n=32 --> 0.648 / 0.410
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 30}
+n=64 --> 0.671 / 0.431
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 30}
+n=96 --> 0.711 / 0.474
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 20}
+n=128 --> 0.692 / 0.465
+====LR
+{'C': 0.7, 'class_weight': 'balanced'}
+n=8 --> 0.502 / 0.456
+{'C': 0.7, 'class_weight': 'balanced'}
+n=16 --> 0.538 / 0.441
+{'C': 0.3, 'class_weight': 'balanced'}
+n=24 --> 0.515 / 0.468
+{'C': 0.1, 'class_weight': 'balanced'}
+n=32 --> 0.579 / 0.491
+{'C': 0.01, 'class_weight': 'balanced'}
+n=64 --> 0.576 / 0.503
+{'C': 0.01, 'class_weight': 'balanced'}
+n=96 --> 0.614 / 0.501
+{'C': 0.01, 'class_weight': 'balanced'}
+n=128 --> 0.660 / 0.557
+>>>>>>>2.4
+100%
+573/573 [00:10<00:00, 52.15it/s]
+
+====SVM
+100%
+401/401 [01:15<00:00, 5.34it/s]
+
+100%
+401/401 [01:21<00:00, 4.95it/s]
+
+{'C': 0.2, 'class_weight': 'balanced', 'gamma': 0.625, 'kernel': 'linear'}
+100%
+172/172 [06:24<00:00, 2.24s/it]
+
+100%
+172/172 [05:58<00:00, 2.08s/it]
+
+n=8 --> 0.577 / 0.448
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.0625, 'kernel': 'rbf'}
+n=16 --> 0.933 / 0.450
+{'C': 0.8, 'class_weight': 'balanced', 'gamma': 0.041666666666666664, 'kernel': 'rbf'}
+n=24 --> 0.943 / 0.489
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.015625, 'kernel': 'rbf'}
+n=32 --> 0.866 / 0.513
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.0078125, 'kernel': 'rbf'}
+n=64 --> 0.928 / 0.539
+{'C': 0.8, 'class_weight': 'balanced', 'gamma': 0.005208333333333333, 'kernel': 'rbf'}
+n=96 --> 0.913 / 0.555
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.00390625, 'kernel': 'rbf'}
+n=128 --> 0.960 / 0.566
+====KNN
+{'metric': 'manhattan', 'n_neighbors': 4, 'weights': 'distance'}
+n=8 --> 0.998 / 0.449
+{'metric': 'manhattan', 'n_neighbors': 4, 'weights': 'distance'}
+n=16 --> 0.998 / 0.501
+{'metric': 'euclidean', 'n_neighbors': 5, 'weights': 'uniform'}
+n=24 --> 0.651 / 0.450
+{'metric': 'euclidean', 'n_neighbors': 3, 'weights': 'distance'}
+n=32 --> 0.998 / 0.520
+{'metric': 'euclidean', 'n_neighbors': 4, 'weights': 'distance'}
+n=64 --> 0.998 / 0.458
+{'metric': 'manhattan', 'n_neighbors': 5, 'weights': 'distance'}
+n=96 --> 0.998 / 0.457
+{'metric': 'euclidean', 'n_neighbors': 5, 'weights': 'distance'}
+n=128 --> 0.998 / 0.559
+====RF
+{'ccp_alpha': 0.02, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 20}
+n=8 --> 0.908 / 0.483
+{'ccp_alpha': 0.03, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 20}
+n=16 --> 0.819 / 0.488
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 30}
+n=24 --> 0.980 / 0.485
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 10}
+n=32 --> 0.893 / 0.539
+{'ccp_alpha': 0.03, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 30}
+n=64 --> 0.933 / 0.448
+{'ccp_alpha': 0.03, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 20}
+n=96 --> 0.889 / 0.494
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'gini', 'n_estimators': 30}
+n=128 --> 0.780 / 0.517
+====LR
+{'C': 0.01, 'class_weight': 'balanced'}
+n=8 --> 0.567 / 0.483
+{'C': 0.02, 'class_weight': 'balanced'}
+n=16 --> 0.613 / 0.528
+{'C': 0.01, 'class_weight': 'balanced'}
+n=24 --> 0.610 / 0.532
+{'C': 0.01, 'class_weight': 'balanced'}
+n=32 --> 0.628 / 0.500
+{'C': 0.01, 'class_weight': 'balanced'}
+n=64 --> 0.736 / 0.538
+{'C': 0.01, 'class_weight': 'balanced'}
+n=96 --> 0.791 / 0.560
+{'C': 0.02, 'class_weight': 'balanced'}
+n=128 --> 0.903 / 0.584
+>>>>>>>2.5
+100%
+573/573 [00:10<00:00, 53.02it/s]
+
+====SVM
+100%
+401/401 [01:22<00:00, 4.88it/s]
+
+100%
+401/401 [01:32<00:00, 4.33it/s]
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.008333333333333333, 'kernel': 'rbf'}
+100%
+172/172 [00:26<00:00, 6.54it/s]
+
+100%
+172/172 [00:26<00:00, 6.51it/s]
+
+n=8 --> 0.573 / 0.439
+{'C': 0.8, 'class_weight': 'balanced', 'gamma': 0.0625, 'kernel': 'rbf'}
+n=16 --> 0.911 / 0.477
+{'C': 0.5, 'class_weight': 'balanced', 'gamma': 0.08333333333333333, 'kernel': 'poly'}
+n=24 --> 0.998 / 0.504
+{'C': 0.8, 'class_weight': 'balanced', 'gamma': 0.03125, 'kernel': 'rbf'}
+n=32 --> 0.950 / 0.530
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.0078125, 'kernel': 'rbf'}
+n=64 --> 0.923 / 0.527
+{'C': 0.8, 'class_weight': 'balanced', 'gamma': 0.0020833333333333333, 'kernel': 'rbf'}
+n=96 --> 0.785 / 0.513
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.0015625, 'kernel': 'rbf'}
+n=128 --> 0.828 / 0.458
+====KNN
+{'metric': 'euclidean', 'n_neighbors': 4, 'weights': 'distance'}
+n=8 --> 1.000 / 0.483
+{'metric': 'manhattan', 'n_neighbors': 3, 'weights': 'distance'}
+n=16 --> 1.000 / 0.525
+{'metric': 'manhattan', 'n_neighbors': 3, 'weights': 'uniform'}
+n=24 --> 0.762 / 0.429
+{'metric': 'manhattan', 'n_neighbors': 5, 'weights': 'uniform'}
+n=32 --> 0.683 / 0.503
+{'metric': 'manhattan', 'n_neighbors': 4, 'weights': 'distance'}
+n=64 --> 1.000 / 0.483
+{'metric': 'euclidean', 'n_neighbors': 5, 'weights': 'distance'}
+n=96 --> 1.000 / 0.512
+{'metric': 'euclidean', 'n_neighbors': 3, 'weights': 'distance'}
+n=128 --> 1.000 / 0.491
+====RF
+{'ccp_alpha': 0.03, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 15}
+n=8 --> 0.806 / 0.450
+{'ccp_alpha': 0.03, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 20}
+n=16 --> 0.863 / 0.520
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 30}
+n=24 --> 0.975 / 0.509
+{'ccp_alpha': 0.03, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 30}
+n=32 --> 0.901 / 0.454
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 10}
+n=64 --> 0.953 / 0.486
+{'ccp_alpha': 0.02, 'class_weight': 'balanced_subsample', 'criterion': 'gini', 'n_estimators': 30}
+n=96 --> 0.778 / 0.457
+{'ccp_alpha': 0.02, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 20}
+n=128 --> 0.990 / 0.464
+====LR
+{'C': 0.02, 'class_weight': 'balanced'}
+n=8 --> 0.584 / 0.485
+{'C': 0.05, 'class_weight': 'balanced'}
+n=16 --> 0.619 / 0.509
+{'C': 0.01, 'class_weight': 'balanced'}
+n=24 --> 0.629 / 0.460
+{'C': 0.01, 'class_weight': 'balanced'}
+n=32 --> 0.644 / 0.488
+{'C': 0.01, 'class_weight': 'balanced'}
+n=64 --> 0.715 / 0.538
+{'C': 0.01, 'class_weight': 'balanced'}
+n=96 --> 0.811 / 0.614
+{'C': 0.01, 'class_weight': 'balanced'}
+n=128 --> 0.857 / 0.567

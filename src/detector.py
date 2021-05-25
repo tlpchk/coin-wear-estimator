@@ -7,8 +7,42 @@ from skimage.draw import ellipse_perimeter
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
+from silx.opencl import sift as silx_sift
 
 BACKGROUND_VALUE = 255
+
+class BriefDetector():
+  def __init__(self):
+    self.detector = cv2.xfeatures2d.StarDetector_create()
+    self.extractor = cv2.xfeatures2d.BriefDescriptorExtractor_create()
+  
+  def detectAndCompute(self, image, kp):
+    kp = self.detector.detect(image, kp)
+    des = self.extractor.compute(image, kp)
+    if des is None:
+        des = np.zeros((1, 32), dtype='float32')
+    return des
+
+class SiftGPUDetector():
+    def __init__(self, template):
+        separate_sides = template.shape[0] != 2 
+        if not separate_sides:
+            template=X[0]
+        
+        self.extractor = silx_sift.SiftPlan(template=template, devicetype="GPU")
+  
+    def __init__(self, shape=(700, 700, 3), dtype='uint8'):        
+        self.extractor = silx_sift.SiftPlan(shape=shape, dtype='uint8', devicetype="GPU")
+
+    
+
+    def detectAndCompute(self, image, compute_kp=None):
+        keypoints = self.extractor.keypoints(image, None)
+        kp = []
+        if compute_kp is not None:
+          kp = [cv2.KeyPoint(x=p.x, y=p.y, _size=p.scale, _angle=np.rad2deg(p.angle)) for p in keypoints]
+        des = [p.desc for p in keypoints]
+        return kp, des
 
 def create_circular_mask(h, w, center=None, radius=None):
 

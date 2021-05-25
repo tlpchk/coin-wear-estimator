@@ -1,4 +1,5 @@
 ipykernel
+ipympl
 selenium
 matplotlib
 pandas

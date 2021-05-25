@@ -55,43 +55,49 @@ def generate_general_master_coin(label):
 
     return master_coin
 
-def get_wear_marks(coin, design_mask, ds_shape=None, canny_l=None, canny_u=None):
+def get_wear_marks(coin, design_mask=None, ds_shape=None, blur_size=None, ri_shape=None, canny_l=None, canny_u=None):
     if ds_shape is not None:
         coin = cv2.resize(coin, ds_shape)
+    if ri_shape is not None:
+        coin = remove_illumination(coin, ri_shape, 0)
+    if blur_size is not None:
+        coin = cv2.medianBlur(coin, blur_size)
+        # coin = cv2.GaussianBlur(coin, blur_size, 0)
     if canny_l is not None:
         coin = cv2.cvtColor(coin, cv2.COLOR_BGR2GRAY)
-        coin = cv2.medianBlur(coin, 3)
-        # coin = cv2.GaussianBlur(coin, (3,3), 0.5)
         coin = cv2.Canny(coin, canny_l, canny_u)
-        coin = np.multiply(~design_mask.astype(bool), coin)
-    else:
+        if design_mask is not None:
+          coin = np.multiply(~design_mask.astype(bool), coin)
+    elif design_mask is not None:
         design_mask = np.repeat(design_mask[:, :, np.newaxis], 3, axis=2)
         coin = coin.copy()
         coin[design_mask.astype(bool)] = BACKGROUND_VALUE
     return coin
 
-def convert_to_wear_marks_dataset(dataset, separate_sides, ds_shape=None, canny_l=150, canny_u=200):
+def convert_to_wear_marks_dataset(dataset, design_mask_dict=None, **kwargs):
     dataset = Bunch(dataset.copy())
-    master_coin_dict = { \
-        1: cv2.imread(master_coins_path(MARCINIAK_DATASET_PATH) + "/1_general.jpg"), \
-        2: cv2.imread(master_coins_path(MARCINIAK_DATASET_PATH) + "/2_general.jpg"), \
-    }
-    design_mask_dict = { \
-        1: get_design_mask(master_coin_dict[1]), \
-        2: get_design_mask(master_coin_dict[2]), \
-    }
+    if design_mask_dict is None:
+      master_coin_dict = { \
+          1: cv2.imread(master_coins_path(MARCINIAK_DATASET_PATH) + "/1_general.jpg"), \
+          2: cv2.imread(master_coins_path(MARCINIAK_DATASET_PATH) + "/2_general.jpg"), \
+      }
+      design_mask_dict = { \
+          1: get_design_mask(master_coin_dict[1]), \
+          2: get_design_mask(master_coin_dict[2]), \
+      }
 
     X = []
     n = len(dataset.X)
     pbar = tqdm(total=n)
+    separate_sides = dataset.X.shape[1] != 2
     for i in range(n):
         if separate_sides:
             side = dataset.side[i]
-            wear_marks = get_wear_marks(dataset.X[i], design_mask_dict[side], ds_shape=ds_shape, canny_l=canny_l, canny_u=canny_u)
+            wear_marks = get_wear_marks(dataset.X[i], design_mask_dict[side], **kwargs)
             X.append(wear_marks)
         else:
-            wear_marks_1 = get_wear_marks(dataset.X[i][0], design_mask_dict[1], ds_shape=ds_shape, canny_l=canny_l, canny_u=canny_u)
-            wear_marks_2 = get_wear_marks(dataset.X[i][1], design_mask_dict[2], ds_shape=ds_shape, canny_l=canny_l, canny_u=canny_u)
+            wear_marks_1 = get_wear_marks(dataset.X[i][0], design_mask_dict[1], **kwargs)
+            wear_marks_2 = get_wear_marks(dataset.X[i][1], design_mask_dict[2], **kwargs)
             X.append((wear_marks_1, wear_marks_2))
         pbar.update(1)
     
@@ -100,7 +106,7 @@ def convert_to_wear_marks_dataset(dataset, separate_sides, ds_shape=None, canny_
     #     wear_marks_dataset[k] = dataset.k
     # wear_marks_dataset.X = X
 
-    dataset.X = X
+    dataset.X = np.array(X)
     pbar.close()  
 
     return dataset

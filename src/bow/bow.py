@@ -20,15 +20,9 @@ if torch.cuda.is_available():
 else :
     from sklearn.cluster import KMeans
     
-def getDescriptors(sift, img, sift_gpu):
-    if sift_gpu:
-      des = [kp.desc for kp in sift.keypoints(img, None)]
-    else:
-      kp, des = sift.detectAndCompute(img, None)
-    return des
 
 def clusterDescriptors(descriptors, no_clusters):
-    kmeans = KMeans(n_clusters = no_clusters).fit(descriptors)
+    kmeans = KMeans(n_clusters = no_clusters, n_init = 300).fit(descriptors)
     return kmeans
 
 def extractFeatures(kmeans, descriptor_list, no_clusters):

@@ -8,3 +8,4 @@ data/*/*/img/
 **/*.code-workspace
 **/.ipynb_checkpoints
 data/*.h5
+data_copy/
