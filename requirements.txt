@@ -11,7 +11,7 @@ seaborn
 ipywidgets
 scikit-learn
 bunch
-h2o4gpu
+# h2o4gpu
 silx[full]
 ocl
 opencv-python==4.5.1.48

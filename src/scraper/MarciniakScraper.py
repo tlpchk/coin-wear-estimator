@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from Scraper import Scraper
+from .Scraper import Scraper
 
 class MarciniakScraper(Scraper):
     def __init__(self):
@@ -43,7 +43,7 @@ class MarciniakScraper(Scraper):
         print("Fetched {} links".format(len(all_links)))
         return all_links
 
-    def scrap_coin_data_from_page(self, link, id):
+    def scrap_coin_data_from_page(self, link):
         driver = self._driver
         driver.get(link)
         date = driver.find_element_by_xpath("//div[contains(@class, 'auctioninfo')]//div[text()='Data']/../strong").text

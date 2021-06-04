@@ -39,6 +39,16 @@ def align_with_reference(dst_im_orig,
     src_im = cv2.cvtColor(src_im, cv2.COLOR_BGR2GRAY)
     dst_im = cv2.cvtColor(dst_im, cv2.COLOR_BGR2GRAY)
 
+    if verbose:
+        fig, (ax1, ax2) = plt.subplots(1,2,figsize=(16,8))
+        ax1.imshow(src_im, cmap='gray')
+        ax1.axis('off')
+        ax1.set_title("Reference coin")
+        ax2.imshow(dst_im, cmap='gray')
+        ax2.axis('off')
+        ax2.set_title("Coin to be aligned")
+        plt.show()
+
     if kernel_size is not None:
         src_im = remove_illumination(src_im, kernel_size, 0)
         dst_im = remove_illumination(dst_im, kernel_size, 0)
@@ -49,11 +59,6 @@ def align_with_reference(dst_im_orig,
 #         src_gray = cv2.Canny(src_gray, 15, 30)
 #         dst_gray = cv2.Canny(dst_gray, 15, 30)
 
-    if verbose:
-        fig, (ax1, ax2) = plt.subplots(1,2,figsize=(16,8))
-        ax1.imshow(src_im, cmap='gray')
-        ax2.imshow(dst_im, cmap='gray')
-        plt.show()
 
     if use_silx_sift:
         sift = silx_sift.SiftPlan(template=src_im, devicetype="GPU" if torch.cuda.is_available() else "CPU")

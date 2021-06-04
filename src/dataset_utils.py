@@ -11,7 +11,6 @@ import itertools
 def load_dataset(
     dataset_path=None,
     h5_path=None,
-    categories=None,
     ds_shape=None,
     separate_sides=True,
     uncertain=False,

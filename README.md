@@ -18,5 +18,9 @@
 # Run
 
 ```sh
+python3 -m src.0_scraper_pipeline "Sztandar 1930"
+```
+
+```sh
 python3 -m src.2_parser_pipeline
 ```

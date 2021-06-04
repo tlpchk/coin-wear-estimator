@@ -1,5 +1,6 @@
 import sys
 import re
+import os
 
 def get_filename(keyword):
     return keyword.lower().replace(" ","_")
@@ -108,11 +109,19 @@ MARCINIAK = "marciniak"
 if 'google.colab' in sys.modules:
     ROOT_PATH = "/content/drive/MyDrive/coin-wear-estimator"
 else:
-    ROOT_PATH = "/Users/telepchuk/PWr/Dan III/Magister/coin-wear-estimator"
+    ROOT_PATH = "/Users/telepchuk/PWr/Dan_III/Magister/coin-wear-estimator"
 
-KEYWORD = "Sztandar 1930"
-MARCINIAK_DATASET_PATH = "{}/data/marciniak/{}".format(ROOT_PATH, get_filename(KEYWORD))
-NIEMCZYK_DATASET_PATH = "{}/data/niemczyk/{}".format(ROOT_PATH, get_filename(KEYWORD))
+def create_dir_if_not_exist(path):
+    if not os.path.exists(os.path.dirname(path)):
+        os.makedirs(os.path.dirname(path))
+
+def define_ds_paths(keyword):
+    global MARCINIAK_DATASET_PATH, NIEMCZYK_DATASET_PATH
+    MARCINIAK_DATASET_PATH = "{}/data/marciniak/{}".format(ROOT_PATH, get_filename(keyword))
+    NIEMCZYK_DATASET_PATH = "{}/data/niemczyk/{}".format(ROOT_PATH, get_filename(keyword))
+
+DEFAULT_KEYWORD = "Sztandar 1930"
+define_ds_paths(DEFAULT_KEYWORD)
 
 metadata_path = lambda ds_path: ds_path + "/csv/metadata.csv"
 page_link_path = lambda ds_path: ds_path + "/csv/page_link.csv"
