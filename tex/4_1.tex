@@ -1,0 +1,23 @@
+\begin{table}
+\centering
+\caption{SVM and KNN parameters for experiments 4.}
+\label{tab:params_4_svm_knn}
+\begin{tabular}{|c|c|ccccc||ccccc|}\hline
+& & \multicolumn{5}{c||}{\underline{SVM}} & \multicolumn{5}{c|}{\underline{KNN}}\\
+№ &   n & train & test &   C & $\gamma$ & kernel & train & test & metric & k & weights \\\hline
+1 &   8 &   .72 &  .54 & 0.8 &    0.250 &    rbf &   .68 &  .52 &      E & 5 &       U \\
+  &  16 &   .82 &  .58 & 1.0 &    0.125 &    rbf &     1 &  .53 &      M & 3 &       D \\
+  &  24 &   .68 &  .53 & 0.5 &    0.208 & linear &   .73 &  .55 &      M & 5 &       U \\
+  &  32 &   .84 &  .61 & 1.0 &    0.031 &    rbf &     1 &   .6 &      M & 5 &       D \\
+  &  64 &   .87 &  .62 & 1.0 &    0.016 &    rbf &     1 &  .56 &      E & 5 &       D \\
+  &  96 &   .87 &  .64 & 0.8 &    0.010 &    rbf &   .77 &  .55 &      M & 4 &       U \\
+  & 128 &   .91 &  .66 & 1.0 &    0.008 &    rbf &   .76 &   .6 &      M & 5 &       U \\\hline
+2 &   8 &   .73 &  .55 & 1.0 &    0.250 &    rbf &     1 &  .56 &      M & 5 &       D \\
+  &  16 &   .83 &  .62 & 1.0 &    0.125 &    rbf &     1 &   .6 &      E & 5 &       D \\
+  &  24 &    .8 &  .59 & 1.0 &    0.042 &    rbf &     1 &  .57 &      M & 3 &       D \\
+  &  32 &   .83 &  .62 & 1.0 &    0.031 &    rbf &   .81 &  .58 &      E & 4 &       U \\
+  &  64 &   .91 &  .69 & 0.8 &    0.031 &    rbf &   .77 &  .59 &      M & 5 &       U \\
+  &  96 &   .88 &  .63 & 1.0 &    0.010 &    rbf &     1 &  .58 &      M & 5 &       D \\
+  & 128 &   .88 &  .68 & 0.8 &    0.008 &    rbf &   .74 &  .56 &      E & 5 &       U \\\hline
+\end{tabular}
+\end{table}

@@ -7,5 +7,5 @@ coin-wear-env/
 data/*/*/img/
 **/*.code-workspace
 **/.ipynb_checkpoints
-data/*.h5
+**.h5
 data_copy/
