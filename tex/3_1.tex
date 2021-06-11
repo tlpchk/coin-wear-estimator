@@ -4,7 +4,7 @@
 \label{tab:params_3_svm_knn}
 \begin{tabular}{|c|c|ccccc||ccccc|}\hline
 & & \multicolumn{5}{c||}{\underline{SVM}} & \multicolumn{5}{c|}{\underline{KNN}}\\
-№ &   n & train & test &   C & $\gamma$ &  kernel & train & test & metric & k & weights \\\hline
+№ &   k & train & test &   C & $\gamma$ &  kernel & train & test & metric & n & weights \\\hline
 1 &   8 &   .71 &  .55 & 1.0 &    0.125 &    poly &   .77 &  .51 &      E & 3 &       U \\
   &  16 &   .84 &  .58 & 1.0 &    0.125 &     rbf &     1 &  .55 &      E & 5 &       D \\
   &  24 &   .89 &   .6 & 1.0 &    0.083 &     rbf &     1 &  .59 &      E & 3 &       D \\
@@ -44,8 +44,8 @@
   &  16 &   .83 &  .56 & 1.0 &    0.125 &     rbf &     1 &  .57 &      M & 5 &       D \\
   &  24 &   .78 &  .59 & 0.8 &    0.042 &     rbf &   .74 &  .56 &      E & 5 &       U \\
   &  32 &   .73 &  .59 & 0.2 &    0.156 &  linear &   .73 &  .58 &      E & 5 &       U \\
-  &  64 &   .84 &  .69 & 1.0 &    0.016 &     rbf &     1 &  .61 &      M & 5 &       D \\
-  &  96 &   .87 &  .65 & 1.0 &    0.010 &     rbf &     1 &  .62 &      M & 3 &       D \\
+  &  64 &   .84 &  .72 & 1.0 &    0.016 &     rbf &     1 &  .61 &      M & 5 &       D \\
+  &  96 &   .87 &  .69 & 1.0 &    0.010 &     rbf &     1 &  .62 &      M & 3 &       D \\
   & 128 &   .82 &  .65 & 1.0 &    0.004 &     rbf &     1 &  .61 &      E & 3 &       D \\\hline
 \end{tabular}
 \end{table}

@@ -1,15 +1,7 @@
 >>>>>>>3.1
-100%
-573/573 [00:05<00:00, 109.88it/s]
-
 ====SVM
-100%
-401/401 [02:04<00:00, 3.23it/s]
 
 {'C': 1, 'class_weight': 'balanced', 'gamma': 0.125, 'kernel': 'poly'}
-100%
-172/172 [06:14<00:00, 2.18s/it]
-
 n=8 --> 0.708 / 0.547
 {'C': 1, 'class_weight': 'balanced', 'gamma': 0.125, 'kernel': 'rbf'}
 n=16 --> 0.843 / 0.576
@@ -134,33 +126,13 @@ n=24 --> 0.675 / 0.587
 n=32 --> 0.674 / 0.550
 {'C': 0.01, 'class_weight': 'balanced'}
 n=64 --> 0.715 / 0.535
-/usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
-STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
-
-Increase the number of iterations (max_iter) or scale the data as shown in:
-    https://scikit-learn.org/stable/modules/preprocessing.html
-Please also refer to the documentation for alternative solver options:
-    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
-  extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
-/usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
-STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
-
-Increase the number of iterations (max_iter) or scale the data as shown in:
-    https://scikit-learn.org/stable/modules/preprocessing.html
-Please also refer to the documentation for alternative solver options:
-    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
-  extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
 {'C': 0.7, 'class_weight': 'balanced'}
 n=96 --> 0.896 / 0.549
 {'C': 0.02, 'class_weight': 'balanced'}
 n=128 --> 0.795 / 0.555
 >>>>>>>3.3
-100%
-573/573 [00:14<00:00, 39.93it/s]
 
 ====SVM
-100%
-401/401 [02:04<00:00, 3.22it/s]
 
 {'C': 0.5, 'class_weight': 'balanced', 'gamma': 0.125, 'kernel': 'rbf'}
 100%
@@ -225,17 +197,9 @@ n=96 --> 0.801 / 0.480
 {'C': 0.02, 'class_weight': 'balanced'}
 n=128 --> 0.741 / 0.470
 >>>>>>>3.4
-100%
-573/573 [00:45<00:00, 12.65it/s]
-
 ====SVM
-100%
-401/401 [00:28<00:00, 13.92it/s]
 
 {'C': 0.5, 'class_weight': 'balanced', 'gamma': 0.625, 'kernel': 'linear'}
-100%
-172/172 [00:05<00:00, 28.91it/s]
-
 n=8 --> 0.542 / 0.450
 {'C': 1, 'class_weight': 'balanced', 'gamma': 0.3125, 'kernel': 'linear'}
 n=16 --> 0.560 / 0.478
@@ -295,17 +259,8 @@ n=96 --> 0.717 / 0.536
 {'C': 0.01, 'class_weight': 'balanced'}
 n=128 --> 0.722 / 0.522
 >>>>>>>3.5
-100%
-573/573 [01:11<00:00, 7.97it/s]
-
 ====SVM
-100%
-401/401 [01:57<00:00, 3.41it/s]
-
 {'C': 1, 'class_weight': 'balanced', 'gamma': 0.125, 'kernel': 'rbf'}
-100%
-172/172 [05:30<00:00, 1.92s/it]
-
 n=8 --> 0.697 / 0.551
 {'C': 0.8, 'class_weight': 'balanced', 'gamma': 0.0625, 'kernel': 'rbf'}
 n=16 --> 0.751 / 0.607
@@ -365,17 +320,8 @@ n=96 --> 0.829 / 0.670
 {'C': 0.02, 'class_weight': 'balanced'}
 n=128 --> 0.819 / 0.647
 >>>>>>>3.6
-100%
-573/573 [01:56<00:00, 4.93it/s]
-
 ====SVM
-100%
-401/401 [02:00<00:00, 3.34it/s]
-
 {'C': 0.5, 'class_weight': 'balanced', 'gamma': 0.625, 'kernel': 'rbf'}
-100%
-172/172 [05:44<00:00, 2.00s/it]
-
 n=8 --> 0.809 / 0.524
 {'C': 1, 'class_weight': 'balanced', 'gamma': 0.125, 'kernel': 'rbf'}
 n=16 --> 0.835 / 0.564
@@ -384,9 +330,9 @@ n=24 --> 0.777 / 0.595
 {'C': 0.2, 'class_weight': 'balanced', 'gamma': 0.15625, 'kernel': 'linear'}
 n=32 --> 0.726 / 0.587
 {'C': 1, 'class_weight': 'balanced', 'gamma': 0.015625, 'kernel': 'rbf'}
-n=64 --> 0.843 / 0.694
+n=64 --> 0.843 / 0.721
 {'C': 1, 'class_weight': 'balanced', 'gamma': 0.010416666666666666, 'kernel': 'rbf'}
-n=96 --> 0.870 / 0.648
+n=96 --> 0.870 / 0.694
 {'C': 1, 'class_weight': 'balanced', 'gamma': 0.00390625, 'kernel': 'rbf'}
 n=128 --> 0.823 / 0.653
 ====KNN

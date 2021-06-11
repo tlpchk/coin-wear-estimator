@@ -243,10 +243,6 @@ n=96 --> 0.791 / 0.560
 {'C': 0.02, 'class_weight': 'balanced'}
 n=128 --> 0.903 / 0.584
 >>>>>>>2.5
->>>>>>>2.5
-100%
-573/573 [00:15<00:00, 37.63it/s]
-
 ====SVM
 {'C': 1, 'class_weight': 'balanced', 'gamma': 0.625, 'kernel': 'rbf'}
 n=8 --> 0.773 / 0.274
@@ -307,3 +303,65 @@ n=64 --> 0.555 / 0.323
 n=96 --> 0.698 / 0.317
 {'C': 0.01, 'class_weight': 'balanced'}
 n=128 --> 0.641 / 0.326
+
+>>>>>>>2.6
+====SVM
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.625, 'kernel': 'rbf'}
+n=8 --> 0.853 / 0.384
+{'C': 0.2, 'class_weight': 'balanced', 'gamma': 0.3125, 'kernel': 'linear'}
+n=16 --> 0.549 / 0.498
+{'C': 0.5, 'class_weight': 'balanced', 'gamma': 0.041666666666666664, 'kernel': 'sigmoid'}
+n=24 --> 0.435 / 0.425
+{'C': 0.2, 'class_weight': 'balanced', 'gamma': 0.0625, 'kernel': 'sigmoid'}
+n=32 --> 0.476 / 0.380
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.0078125, 'kernel': 'sigmoid'}
+n=64 --> 0.569 / 0.498
+{'C': 0.8, 'class_weight': 'balanced', 'gamma': 0.005208333333333333, 'kernel': 'rbf'}
+n=96 --> 0.690 / 0.369
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.00390625, 'kernel': 'sigmoid'}
+n=128 --> 0.618 / 0.426
+====KNN
+{'metric': 'manhattan', 'n_neighbors': 4, 'weights': 'uniform'}
+n=8 --> 0.613 / 0.352
+{'metric': 'euclidean', 'n_neighbors': 3, 'weights': 'uniform'}
+n=16 --> 0.669 / 0.415
+{'metric': 'euclidean', 'n_neighbors': 3, 'weights': 'distance'}
+n=24 --> 1.000 / 0.381
+{'metric': 'euclidean', 'n_neighbors': 3, 'weights': 'distance'}
+n=32 --> 1.000 / 0.392
+{'metric': 'euclidean', 'n_neighbors': 4, 'weights': 'distance'}
+n=64 --> 1.000 / 0.506
+{'metric': 'euclidean', 'n_neighbors': 4, 'weights': 'distance'}
+n=96 --> 1.000 / 0.351
+{'metric': 'euclidean', 'n_neighbors': 5, 'weights': 'distance'}
+n=128 --> 1.000 / 0.353
+====RF
+{'ccp_alpha': 0.03, 'class_weight': 'balanced_subsample', 'criterion': 'gini', 'n_estimators': 30}
+n=8 --> 0.521 / 0.444
+{'ccp_alpha': 0.03, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 20}
+n=16 --> 0.909 / 0.498
+{'ccp_alpha': 0.03, 'class_weight': 'balanced_subsample', 'criterion': 'entropy', 'n_estimators': 15}
+n=24 --> 0.894 / 0.433
+{'ccp_alpha': 0.03, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 15}
+n=32 --> 0.894 / 0.570
+{'ccp_alpha': 0.02, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 30}
+n=64 --> 0.996 / 0.385
+{'ccp_alpha': 0.02, 'class_weight': 'balanced', 'criterion': 'entropy', 'n_estimators': 30}
+n=96 --> 1.000 / 0.329
+{'ccp_alpha': 0.02, 'class_weight': 'balanced', 'criterion': 'gini', 'n_estimators': 30}
+n=128 --> 0.846 / 0.369
+====LR
+{'C': 0.7, 'class_weight': 'balanced'}
+n=8 --> 0.515 / 0.493
+{'C': 0.1, 'class_weight': 'balanced'}
+n=16 --> 0.546 / 0.466
+{'C': 0.02, 'class_weight': 'balanced'}
+n=24 --> 0.542 / 0.413
+{'C': 0.01, 'class_weight': 'balanced'}
+n=32 --> 0.567 / 0.448
+{'C': 0.01, 'class_weight': 'balanced'}
+n=64 --> 0.614 / 0.398
+{'C': 0.02, 'class_weight': 'balanced'}
+n=96 --> 0.718 / 0.439
+{'C': 0.02, 'class_weight': 'balanced'}
+n=128 --> 0.814 / 0.494

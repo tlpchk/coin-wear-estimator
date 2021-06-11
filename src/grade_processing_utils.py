@@ -26,7 +26,7 @@ def find_nearest_idx(array, value):
 def get_nearest_category_value(sheldon, state, categories=["1", "1/2", "2", "2/3", "3"]):
     if expert_grading(state) is not None:
         return get_circulate_category(sheldon)
-    categories_in_sheldon = [basic_grading(cat) for cat in categories
+    categories_in_sheldon = [basic_grading(cat) for cat in categories]
     nearest_category_idx = find_nearest_idx(categories_in_sheldon, grade)
     return categories[nearest_category_idx]
     
