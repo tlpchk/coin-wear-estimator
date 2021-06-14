@@ -1,0 +1,89 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{graphicx}
+\usepackage{lscape}
+\title{Output tables for the test of Multiple comparisons.}
+\author{}
+\date{\today}
+\begin{document}
+\begin{landscape}
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+\section{Average rankings of Friedman test}
+
+
+
+Average ranks obtained by applying the Friedman procedure
+
+\begin{table}[!htp]
+\centering
+\begin{tabular}{|c|c|}\hline
+Algorithm&Ranking\\\hline
+4.1 & 2.8571\\
+4.2 & 1.4286\\
+1.3 & 1.7143\\
+\hline
+\end{tabular}
+\caption{Average Rankings of the algorithms}
+\end{table}
+
+Friedman statistic considering reduction performance (distributed according to chi-square with 2 degrees of freedom: 8.
+
+P-value computed by Friedman Test: 0.018315638898613318.\newline
+
+
+
+\pagebreak
+
+\section{Post hoc comparisons}
+
+Results achieved on post hoc comparisons for $\alpha = 0.05$, $\alpha = 0.10$ and adjusted p-values.
+
+\subsection{P-values for $\alpha=0.05$}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{ccccc}
+$i$&algorithms&$z=(R_0 - R_i)/SE$&$p$&Shaffer\\
+\hline3&4.1 vs. 4.2&2.672612&0.007526&0.016667\\
+2&4.1 vs. 1.3&2.13809&0.032509&0.05\\
+1&4.2 vs. 1.3&0.534522&0.59298&0.05\\
+\hline
+\end{tabular}
+\caption{P-values Table for $\alpha=0.05$}
+\end{table}Shaffer's procedure rejects those hypotheses that have an unadjusted p-value $\le0.016667$.
+
+\pagebreak
+
+\subsection{P-values for $\alpha=0.10$}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{ccccc}
+$i$&algorithms&$z=(R_0 - R_i)/SE$&$p$&Shaffer\\
+\hline3&4.1 vs. 4.2&2.672612&0.007526&0.033333\\
+2&4.1 vs. 1.3&2.13809&0.032509&0.1\\
+1&4.2 vs. 1.3&0.534522&0.59298&0.1\\
+\hline
+\end{tabular}
+\caption{P-values Table for $\alpha=0.10$}
+\end{table}Shaffer's procedure rejects those hypotheses that have an unadjusted p-value $\le0.033333$.
+
+\pagebreak
+
+\subsection{Adjusted p-values}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{cccc}
+i&hypothesis&unadjusted $p$&$p_{Shaf}$\\
+\hline1&4.1 vs .4.2&0.007526&0.022579\\
+2&4.1 vs .1.3&0.032509&0.032509\\
+3&4.2 vs .1.3&0.59298&0.59298\\
+\hline
+\end{tabular}
+\caption{Adjusted $p$-values}
+\end{table}
+
+\end{landscape}
+\end{document}

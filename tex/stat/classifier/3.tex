@@ -1,0 +1,95 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{graphicx}
+\usepackage{lscape}
+\title{Output tables for the test of Multiple comparisons.}
+\author{}
+\date{\today}
+\begin{document}
+\begin{landscape}
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+\section{Average rankings of Friedman test}
+
+
+
+Average ranks obtained by applying the Friedman procedure
+
+\begin{table}[!htp]
+\centering
+\begin{tabular}{|c|c|}\hline
+Algorithm&Ranking\\\hline
+SVM & 1.8214\\
+KNN & 2.9167\\
+RF & 3.0238\\
+LR & 2.2381\\
+\hline
+\end{tabular}
+\caption{Average Rankings of the algorithms}
+\end{table}
+
+Friedman statistic considering reduction performance (distributed according to chi-square with 3 degrees of freedom: 24.621429.
+
+P-value computed by Friedman Test: 1.8526501184390476E-5.\newline
+
+
+
+\pagebreak
+
+\section{Post hoc comparisons}
+
+Results achieved on post hoc comparisons for $\alpha = 0.05$, $\alpha = 0.10$ and adjusted p-values.
+
+\subsection{P-values for $\alpha=0.05$}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{cccc}
+$i$&algorithms&$z=(R_0 - R_i)/SE$&$p$\\
+\hline6&SVM vs. RF&4.268029&0.00002\\
+5&SVM vs. KNN&3.88771&0.000101\\
+4&RF vs. LR&2.789009&0.005287\\
+3&KNN vs. LR&2.40869&0.01601\\
+2&SVM vs. LR&1.47902&0.139135\\
+1&KNN vs. RF&0.380319&0.703708\\
+\hline
+\end{tabular}
+\caption{P-values Table for $\alpha=0.05$}
+\end{table}\pagebreak
+
+\subsection{P-values for $\alpha=0.10$}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{cccc}
+$i$&algorithms&$z=(R_0 - R_i)/SE$&$p$\\
+\hline6&SVM vs. RF&4.268029&0.00002\\
+5&SVM vs. KNN&3.88771&0.000101\\
+4&RF vs. LR&2.789009&0.005287\\
+3&KNN vs. LR&2.40869&0.01601\\
+2&SVM vs. LR&1.47902&0.139135\\
+1&KNN vs. RF&0.380319&0.703708\\
+\hline
+\end{tabular}
+\caption{P-values Table for $\alpha=0.10$}
+\end{table}\pagebreak
+
+\subsection{Adjusted p-values}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{ccc}
+i&hypothesis&unadjusted $p$\\
+\hline1&SVM vs .RF&0.00002\\
+2&SVM vs .KNN&0.000101\\
+3&RF vs .LR&0.005287\\
+4&KNN vs .LR&0.01601\\
+5&SVM vs .LR&0.139135\\
+6&KNN vs .RF&0.703708\\
+\hline
+\end{tabular}
+\caption{Adjusted $p$-values}
+\end{table}
+
+\end{landscape}
+\end{document}

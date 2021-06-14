@@ -1,0 +1,128 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{graphicx}
+\usepackage{lscape}
+\title{Output tables for the test of Multiple comparisons.}
+\author{}
+\date{\today}
+\begin{document}
+\begin{landscape}
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+\section{Average rankings of Friedman test}
+
+
+
+Average ranks obtained by applying the Friedman procedure
+
+\begin{table}[!htp]
+\centering
+\begin{tabular}{|c|c|}\hline
+Algorithm&Ranking\\\hline
+1 & 2.2143\\
+2 & 3\\
+3 & 3.2857\\
+4 & 2.2143\\
+5 & 6\\
+6 & 4.2857\\
+\hline
+\end{tabular}
+\caption{Average Rankings of the algorithms}
+\end{table}
+
+Friedman statistic considering reduction performance (distributed according to chi-square with 5 degrees of freedom: 20.938776.
+
+P-value computed by Friedman Test: 8.319201423860889E-4.\newline
+
+
+
+\pagebreak
+
+\section{Post hoc comparisons}
+
+Results achieved on post hoc comparisons for $\alpha = 0.05$, $\alpha = 0.10$ and adjusted p-values.
+
+\subsection{P-values for $\alpha=0.05$}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{ccccc}
+$i$&algorithms&$z=(R_0 - R_i)/SE$&$p$&Shaffer\\
+\hline15&4 vs. 5&3.785714&0.000153&0.003333\\
+14&1 vs. 5&3.785714&0.000153&0.005\\
+13&2 vs. 5&3&0.0027&0.005\\
+12&3 vs. 5&2.714286&0.006642&0.005\\
+11&4 vs. 6&2.071429&0.038319&0.005\\
+10&1 vs. 6&2.071429&0.038319&0.005\\
+9&5 vs. 6&1.714286&0.086476&0.005556\\
+8&2 vs. 6&1.285714&0.198543&0.00625\\
+7&3 vs. 4&1.071429&0.283977&0.007143\\
+6&1 vs. 3&1.071429&0.283977&0.008333\\
+5&3 vs. 6&1&0.317311&0.01\\
+4&2 vs. 4&0.785714&0.432035&0.0125\\
+3&1 vs. 2&0.785714&0.432035&0.016667\\
+2&2 vs. 3&0.285714&0.775097&0.025\\
+1&1 vs. 4&0&1&0.05\\
+\hline
+\end{tabular}
+\caption{P-values Table for $\alpha=0.05$}
+\end{table}Shaffer's procedure rejects those hypotheses that have an unadjusted p-value $\le0.003333$.
+
+\pagebreak
+
+\subsection{P-values for $\alpha=0.10$}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{ccccc}
+$i$&algorithms&$z=(R_0 - R_i)/SE$&$p$&Shaffer\\
+\hline15&4 vs. 5&3.785714&0.000153&0.006667\\
+14&1 vs. 5&3.785714&0.000153&0.01\\
+13&2 vs. 5&3&0.0027&0.01\\
+12&3 vs. 5&2.714286&0.006642&0.01\\
+11&4 vs. 6&2.071429&0.038319&0.01\\
+10&1 vs. 6&2.071429&0.038319&0.01\\
+9&5 vs. 6&1.714286&0.086476&0.011111\\
+8&2 vs. 6&1.285714&0.198543&0.0125\\
+7&3 vs. 4&1.071429&0.283977&0.014286\\
+6&1 vs. 3&1.071429&0.283977&0.016667\\
+5&3 vs. 6&1&0.317311&0.02\\
+4&2 vs. 4&0.785714&0.432035&0.025\\
+3&1 vs. 2&0.785714&0.432035&0.033333\\
+2&2 vs. 3&0.285714&0.775097&0.05\\
+1&1 vs. 4&0&1&0.1\\
+\hline
+\end{tabular}
+\caption{P-values Table for $\alpha=0.10$}
+\end{table}Shaffer's procedure rejects those hypotheses that have an unadjusted p-value $\le0.006667$.
+
+\pagebreak
+
+\subsection{Adjusted p-values}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{cccc}
+i&hypothesis&unadjusted $p$&$p_{Shaf}$\\
+\hline1&4 vs .5&0.000153&0.002299\\
+2&1 vs .5&0.000153&0.002299\\
+3&2 vs .5&0.0027&0.026998\\
+4&3 vs .5&0.006642&0.066419\\
+5&4 vs .6&0.038319&0.383188\\
+6&1 vs .6&0.038319&0.383188\\
+7&5 vs .6&0.086476&0.605334\\
+8&2 vs .6&0.198543&1.3898\\
+9&3 vs .4&0.283977&1.987837\\
+10&1 vs .3&0.283977&1.987837\\
+11&3 vs .6&0.317311&1.987837\\
+12&2 vs .4&0.432035&1.987837\\
+13&1 vs .2&0.432035&1.987837\\
+14&2 vs .3&0.775097&1.987837\\
+15&1 vs .4&1&1.987837\\
+\hline
+\end{tabular}
+\caption{Adjusted $p$-values}
+\end{table}
+
+\end{landscape}
+\end{document}
